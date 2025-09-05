@@ -1,0 +1,167 @@
+/* Base */
+
+:root {
+  --ink: #333;
+  --bg: #f4f4f4;
+  --brand: #2c3e50;
+  --brand-2: #34495e;
+}
+
+* { 
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+}
+
+/* Header */
+
+header {
+  background: var(--brand);
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+#course-title {
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: transform .15s ease, background-color .2s ease;
+}
+
+nav a:hover {
+  background: var(--brand-2);
+  transform: translateY(-1px);
+}
+
+nav a:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Main */
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+h1 {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--brand);
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  margin: 0 0 0.5rem 0;
+}
+
+/* Cards */
+
+.card {
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,.1);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.25rem;
+  color: #fff;
+  margin: 0;
+  background-color: var(--brand);
+  padding: 0.5rem 1rem;
+  border-radius: 5px 5px 0 0;
+  border-bottom: 2px solid var(--brand-2);
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.card-text {
+  flex: 1;
+}
+
+.card ul {
+  list-style-type: disc; 
+  padding-left: 1.5rem;
+  margin: 0.5rem 0 0 0;
+  text-align: left; 
+}
+
+.card ul li {
+  margin: 0.4rem 0;
+}
+
+.card ul a {
+  color: var(--brand);
+  text-decoration: none;
+  border-bottom: 1px dotted transparent;
+  transition: border-color .2s ease, color .2s ease;
+}
+
+.card ul a:hover {
+  color: var(--brand-2);
+  border-bottom-color: currentColor;
+}
+
+.card img {
+  max-width: 200px;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+/* Footer */
+
+footer {
+  background-color: var(--brand);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+footer p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
