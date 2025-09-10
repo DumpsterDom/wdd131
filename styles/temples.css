@@ -38,7 +38,7 @@ header h1 {
 nav {
     display: none;
     flex-direction: column;
-    background-color: #34495e;
+    background-color: #03203d;
     position: absolute;
     top: 60px;
     left: 0;
@@ -61,6 +61,10 @@ nav a {
 nav a:hover {
     background-color: #1abc9c;
     border-radius: 4px;
+}
+
+.active {
+	color: yellow;
 }
 
 /* Main */
