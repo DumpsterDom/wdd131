@@ -64,7 +64,7 @@ nav a:hover {
 }
 
 .active {
-	color: yellow;
+    color: yellow;
 }
 
 /* Main */
@@ -82,28 +82,47 @@ main h1 {
 }
 
 /* Gallery */
-.gallery {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
+main .gallery {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    grid-auto-rows: auto !important;
+    gap: 1.5rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
 }
 
-figure {
-    margin: 0;
+main .gallery figure {
+    margin: 0 !important;
     text-align: center;
+    transition: transform 0.3s ease;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    break-inside: avoid;
 }
 
-img {
+main .gallery figure:hover {
+    transform: scale(1.05);
+}
+
+main .gallery img {
     width: 100%;
-    height: auto;
+    height: 200px;
+    object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-figcaption {
+main .gallery figcaption {
     font-family: 'Lora', serif;
     margin-top: 0.5rem;
     color: #34495e;
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    text-align: center;
 }
 
 /* Footer */
