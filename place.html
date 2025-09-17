@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 - Japan - Dominic Trujillo-Grissom</title>
+    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals, Dominic Trujillo-Grissom, Japan, Place Page">
+    <meta name="author" content="Dominic">
+    <link rel="stylesheet" href="styles/place.css">
+    <script src="scripts/place.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Japan</h1>
+    </header>
+    <main>
+        <section class="hero">
+            <picture>
+                <source media="(max-width: 600px)" srcset="images/japan-mobile.webp" type="image/webp">
+                <source media="(min-width: 601px)" srcset="images/japan-desktop.webp" type="image/webp">
+                <img src="images/japan.jpg" alt="Mount Fuji with cherry blossoms" loading="lazy">
+            </picture>
+            <div class="hero-caption">
+                <h2>The Land of the Rising Sun</h2>
+                <p>Temples, Traditions, & Cherry Blossoms,</p>
+            </div>
+        </section>
+        <section class="content">
+            <div class="weather">
+                <h2>Weather <img class="weather-icon" src="images/cloud_icon.svg" alt="Weather icon"></h2>
+                <p>Temperature: <span id="temperature">10</span>°C</p>
+                <p>Wind Speed: <span id="wind-speed">5</span> km/h</p>
+                <p>Wind Chill: <span id="wind-chill">N/A</span></p>
+                <img class="weather-icon-mobile" src="images/cloud_icon.svg" alt="Weather icon">
+            </div>
+            <div class="about">
+                <h2>About</h2>
+                <p>Japan, known as the Land of the Rising Sun, is a beautiful blend of ancient tradition and modern innovation. From serene temples and cherry blossoms to bustling cities and advanced technology, it offers a unique cultural experience.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="current-year"></span> 🦖 Dominic Trujillo-Grissom 🦖 North Carolina</p>
+        <p>Last modified: <span id="last-modified"></span></p>
+    </footer>
+</body>
+</html>

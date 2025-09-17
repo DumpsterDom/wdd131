@@ -1,0 +1,176 @@
+:root {
+    --bg-color: #F8F9FA; 
+    --primary-color: #C8102E; 
+    --secondary-color: #E3F2FD; 
+    --accent-color: #424242; 
+    --text-color: #212121; 
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+}
+
+/* Header */
+
+header {
+    background-color: var(--primary-color);
+    padding: 20px;
+    border-bottom: 5px solid var(--accent-color);
+    color: var(--bg-color);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-transform: uppercase;
+}
+
+/* Hero */
+
+.hero {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.hero picture, .hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(200, 16, 46, 0.7);
+    color: var(--bg-color);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.hero-caption h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.hero-caption p {
+    margin: 5px 0 0;
+    font-size: 1em;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+/* Weather & About */
+
+.weather, .about {
+    background-color: rgba(227, 242, 253, 0.8); 
+    padding: 15px;
+    width: 280px; 
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    height: 200px; 
+    min-height: 200px; 
+}
+
+.weather h2, .about h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.5em;
+}
+
+.weather h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.weather .weather-icon {
+    width: 40px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.weather p {
+    margin: 5px 0;
+    font-size: 1em;
+    text-align: center; 
+}
+
+.about p {
+    margin: 5px 0;
+    font-size: 1em;
+    text-align: left; 
+}
+
+.weather-icon-mobile {
+    display: none; 
+    width: 40px;
+    margin: 10px 0;
+}
+
+.weather h2::after {
+    content: none; /* Removed cloud emoji as per previous request */
+}
+
+/* Footer */
+
+footer {
+    background-color: var(--primary-color) !important; /* Ensure red background */
+    background-color: #C8102E; /* Fallback color */
+    padding: 10px;
+    color: var(--bg-color);
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Media */
+
+@media (max-width: 600px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .weather, .about {
+        width: 100%;
+        max-width: 300px; 
+        height: auto; 
+        min-height: 200px; 
+    }
+
+    .hero-caption {
+        position: static;
+        background: none;
+        padding: 0;
+        color: var(--text-color);
+    }
+
+    .weather h2 {
+        justify-content: center; 
+    }
+
+    .weather .weather-icon {
+        display: none; 
+    }
+
+    .weather-icon-mobile {
+        display: block;
+        margin: 10px auto; 
+    }
+}
