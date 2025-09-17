@@ -122,14 +122,14 @@ header h1 {
 }
 
 .weather h2::after {
-    content: none; /* Removed cloud emoji as per previous request */
+    content: none; 
 }
 
 /* Footer */
 
 footer {
-    background-color: var(--primary-color) !important; /* Ensure red background */
-    background-color: #C8102E; /* Fallback color */
+    background-color: var(--primary-color) !important;
+    background-color: #C8102E; 
     padding: 10px;
     color: var(--bg-color);
     font-size: 0.9em;
