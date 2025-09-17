@@ -43,6 +43,10 @@ header h1 {
     display: block;
 }
 
+.hero img {
+    aspect-ratio: 1200 / 800;
+}
+
 .hero-caption {
     position: absolute;
     bottom: 20px;
