@@ -1,0 +1,28 @@
+/* Large */
+
+@media screen and (min-width: 768px) {
+    #hamburger {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        background-color: transparent;
+        padding: 0;
+        width: auto;
+    }
+
+    nav a {
+        margin: 0 0.5rem;
+    }
+
+    main {
+        max-width: 1200px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
