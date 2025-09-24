@@ -3,69 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 131 - Temple Album - Dominic Trujillo-Grissom</title>
-    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals, Dominic Trujillo-Grissom, Temple Album">
-    <meta name="author" content="Dominic">
-    <link rel="stylesheet" href="styles/temples.css">
-    <link rel="stylesheet" href="styles/temples-large.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400&display=swap">
-    <script src="scripts/temples.js" defer></script>
+    <title>Temple Album</title>
+    <link rel="stylesheet" href="filtered-temples.css">
+    <style>
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+        nav.open { display: block; }
+        nav { display: none; }
+        figure { border: 1px solid #ccc; padding: 1rem; text-align: center; }
+        img { max-width: 100%; height: auto; }
+    </style>
 </head>
 <body>
     <header>
         <h1>Temple Album</h1>
-        <button id="hamburger" aria-label="Toggle Menu">☰</button>
-        <nav id="nav-menu">
-            <a href="#">Home</a>
-            <a href="#">Old</a>
-            <a href="#">New</a>
-            <a href="#">Large</a>
-            <a href="#">Small</a>
+        <button id="hamburger" aria-expanded="false">☰</button>
+        <nav id="nav-menu" role="navigation" aria-label="Main navigation">
+            <a href="#" data-filter="home" class="active">Home</a>
+            <a href="#" data-filter="old">Old Temples</a>
+            <a href="#" data-filter="new">New Temples</a>
+            <a href="#" data-filter="large">Large Temples</a>
+            <a href="#" data-filter="small">Small Temples</a>
         </nav>
     </header>
     <main>
-        <h1>Temples Around the World</h1>
-        <h2>Behold the Majestic Beauty of Eternal Houses</h2>
-        <div class="gallery">
-            <figure>
-                <img src="images/temple1.jpg" alt="Temple Laie Hawaii">
-                <figcaption>Laie Hawaii Temple</figcaption>
-            </figure>
-            <figure>
-                <img src="images/temple2.jpg" alt="Temple Salt Lake">
-                <figcaption>Salt Lake Temple</figcaption>
-            </figure>
-            <figure>
-                <img src="images/temple3.jpg" alt="Temple Washington D.C.">
-                <figcaption>Washington D.C. Temple</figcaption>
-            </figure>
-            <figure>
-                <img src="images/temple4.jpg" alt="Temple Rome Italy">
-                <figcaption>Rome Italy Temple</figcaption>
-            </figure>
-            <figure>
-                <img src="images/temple5.jpg" alt="Temple Albuquerque">
-                <figcaption>Albuquerque Temple</figcaption>
-            </figure>
-            <figure>
-                <img src="images/temple6.jpg" alt="Temple Manti">
-                <figcaption>Manti Temple</figcaption>
-            </figure>
-            <figure>
-                <img src="images/temple7.jpg" alt="Temple Portland">
-                <figcaption>Portland Temple</figcaption>
-            </figure>
-            <figure>
-                <img src="images/temple8.jpg" alt="Temple Logan">
-                <figcaption>Logan Temple</figcaption>
-            </figure>
-            <figure>
-                <img src="images/temple9.jpg" alt="Temple San Diego">
-                <figcaption>San Diego Temple</figcaption>
-            </figure>
-        </div>
+        <h2>Temples Around the World</h2>
+        <div class="gallery"></div>
     </main>
     <footer>
         <p>&copy; <span id="current-year"></span> 🦖 Dominic Trujillo-Grissom 🦖 North Carolina</p>
