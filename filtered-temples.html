@@ -3,35 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temple Album</title>
-    <link rel="stylesheet" href="filtered-temples.css">
-    <style>
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
-        nav.open { display: block; }
-        nav { display: none; }
-        figure { border: 1px solid #ccc; padding: 1rem; text-align: center; }
-        img { max-width: 100%; height: auto; }
-    </style>
+    <title>WDD 131 - Filtered Temple Album - Dominic Trujillo-Grissom</title>
+    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals, Dominic Trujillo-Grissom, Temple Album">
+    <meta name="author" content="Dominic">
+    <link rel="stylesheet" href="styles/filtered-temples.css">
 </head>
 <body>
     <header>
-        <h1>Temple Album</h1>
-        <button id="hamburger" aria-expanded="false">☰</button>
+        <h1>Temple Gallery</h1>
+        <button id="hamburger" aria-expanded="false" aria-label="Toggle navigation menu">☰</button>
         <nav id="nav-menu" role="navigation" aria-label="Main navigation">
-            <a href="#" data-filter="home" class="active">Home</a>
-            <a href="#" data-filter="old">Old Temples</a>
-            <a href="#" data-filter="new">New Temples</a>
-            <a href="#" data-filter="large">Large Temples</a>
-            <a href="#" data-filter="small">Small Temples</a>
+            <ul>
+                <li><a href="#" data-filter="all" class="active">All Temples</a></li>
+                <li><a href="#" data-filter="old">Old Temples</a></li>
+                <li><a href="#" data-filter="new">New Temples</a></li>
+                <li><a href="#" data-filter="large">Large Temples</a></li>
+                <li><a href="#" data-filter="small">Small Temples</a></li>
+            </ul>
         </nav>
     </header>
     <main>
-        <h2>Temples Around the World</h2>
-        <div class="gallery"></div>
+        <div class="gallery" aria-live="polite"></div>
     </main>
-    <footer>
+     <footer>
         <p>&copy; <span id="current-year"></span> 🦖 Dominic Trujillo-Grissom 🦖 North Carolina</p>
         <p>Last modified: <span id="last-modified"></span></p>
     </footer>
+    <script src="scripts/filtered-temples.js"></script>
 </body>
 </html>

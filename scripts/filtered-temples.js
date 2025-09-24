@@ -1,3 +1,4 @@
+// Temple data array
 const temples = [
     {
         templeName: "Aba Nigeria",
@@ -68,15 +69,29 @@ const temples = [
         dedicated: "2018, October, 28",
         area: 23095,
         imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/concepcion-chile-temple/concepcion-chile-temple-273-main.jpg"
+    },
+    {
+        templeName: "Manhattan New York",
+        location: "Manhattan, New York, United States",
+        dedicated: "2004, June, 13",
+        area: 20630,
+        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/manhattan-new-york-temple/manhattan-new-york-temple-40080-main.jpg"
+    },
+    {
+        templeName: "Seoul Korea",
+        location: "Seoul Korea",
+        dedicated: "1985, December, 14",
+        area: 28057,
+        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/seoul-korea-temple/seoul-korea-temple-22305-main.jpg"
     }
 ];
 
-// DOM elements
+// DOM 
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
 const gallery = document.querySelector('.gallery');
 
-// Validate temple data
+// Validate 
 function validateTempleData(temples) {
     return temples.every(temple => 
         temple.templeName && 
@@ -87,117 +102,166 @@ function validateTempleData(temples) {
     );
 }
 
-// Parse dedication year
 function getTempleYear(dedicated) {
     const [year] = dedicated.split(', ');
-    return parseInt(year);
+    return parseInt(year, 10);
 }
 
-// Display temples
+// Display temples 
 function displayTemples(templeList) {
     if (!gallery) {
         console.error('Gallery element not found');
-        document.querySelector('main').innerHTML += '<p style="color: red;">Error: Gallery not found.</p>';
+        if (document.querySelector('main')) {
+            document.querySelector('main').innerHTML += '<p style="color: red;">Error: Gallery not found. Please check the HTML structure.</p>';
+        }
         return;
     }
-    gallery.innerHTML = '<p>Loading temples...</p>';
+
+    gallery.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; font-style: italic;">Loading temples...</p>';
+
     setTimeout(() => {
         gallery.innerHTML = '';
         if (templeList.length === 0) {
-            gallery.innerHTML = '<p>No temples match the selected filter. <a href="#" data-filter="all">Show all temples</a></p>';
+            gallery.innerHTML = '<p style="grid-column: 1 / -1; text-align: center;">No temples match the selected filter. <a href="#" data-filter="all" style="color: #007bff;">Show all temples</a></p>';
             return;
         }
+
         templeList.forEach(temple => {
             const figure = document.createElement('figure');
+            figure.setAttribute('role', 'article');
+            figure.setAttribute('aria-labelledby', `temple-${temple.templeName.replace(/\s+/g, '-').toLowerCase()}`);
             figure.innerHTML = `
-                <figcaption>
+                <img src="${temple.imageUrl}" alt="${temple.templeName} Temple exterior" loading="lazy" 
+                     onerror="this.src='https://via.placeholder.com/400x250?text=Image+Not+Available';">
+                <figcaption id="temple-${temple.templeName.replace(/\s+/g, '-').toLowerCase()}">
                     <strong>${temple.templeName}</strong><br>
-                    Location: ${temple.location}<br>
-                    Dedicated: ${temple.dedicated}<br>
-                    Size: ${temple.area.toLocaleString()} sq ft
+                    <span>Location:</span> ${temple.location}<br>
+                    <span>Dedicated:</span> ${temple.dedicated}<br>
+                    <span>Size:</span> ${temple.area.toLocaleString()} sq ft
                 </figcaption>
-                <img src="${temple.imageUrl}" alt="${temple.templeName} Temple" loading="lazy" onerror="this.src='https://via.placeholder.com/400x250?text=Image+Not+Available';">
             `;
             gallery.appendChild(figure);
         });
-    }, 500);
+
+        console.log(`Displayed ${templeList.length} temples`);
+    }, 300); 
 }
 
-// Filter temples
+// Filters
 function filterTemples(filter) {
+    console.log('Applying filter:', filter);
     let filteredTemples = temples;
+
     try {
-        if (filter === 'old') {
-            filteredTemples = temples.filter(temple => getTempleYear(temple.dedicated) < 1900);
-        } else if (filter === 'new') {
-            filteredTemples = temples.filter(temple => getTempleYear(temple.dedicated) > 2000);
-        } else if (filter === 'large') {
-            filteredTemples = temples.filter(temple => temple.area > 90000);
-        } else if (filter === 'small') {
-            filteredTemples = temples.filter(temple => temple.area < 10000);
-        } else if (filter === 'all') {
-            filteredTemples = temples;
+        switch (filter) {
+            case 'old':
+                filteredTemples = temples.filter(temple => getTempleYear(temple.dedicated) < 1900);
+                break;
+            case 'new':
+                filteredTemples = temples.filter(temple => getTempleYear(temple.dedicated) > 2000);
+                break;
+            case 'large':
+                filteredTemples = temples.filter(temple => temple.area > 90000);
+                break;
+            case 'small':
+                filteredTemples = temples.filter(temple => temple.area < 10000);
+                break;
+            case 'all':
+            default:
+                filteredTemples = temples;
+                break;
         }
         displayTemples(filteredTemples);
     } catch (error) {
         console.error('Error filtering temples:', error);
-        gallery.innerHTML = '<p style="color: red;">Error loading temples.</p>';
+        if (gallery) {
+            gallery.innerHTML = '<p style="color: red; text-align: center;">Error loading temples. Please refresh the page.</p>';
+        }
     }
 }
 
-// Initialize hamburger menu
+// Hamburger 
 function initHamburger() {
-    if (hamburger) {
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('open');
-            hamburger.textContent = navMenu.classList.contains('open') ? '✖' : '☰';
-            hamburger.setAttribute('aria-expanded', navMenu.classList.contains('open'));
-        });
-    } else {
-        console.error('Hamburger button not found');
-    }
+    if (!hamburger || !navMenu) return;
+
+    hamburger.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('open');
+        hamburger.textContent = isOpen ? '✖' : '☰';
+        hamburger.setAttribute('aria-expanded', isOpen);
+        console.log('Hamburger toggled:', isOpen ? 'open' : 'closed');
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!navMenu.contains(e.target) && !hamburger.contains(e.target) && navMenu.classList.contains('open')) {
+            navMenu.classList.remove('open');
+            hamburger.textContent = '☰';
+            hamburger.setAttribute('aria-expanded', 'false');
+        }
+    });
 }
 
-// Initialize navigation links
+//  Nav links
 function initNavLinks() {
-    const navLinks = document.querySelectorAll('nav a');
-    if (navLinks.length > 0) {
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                navLinks.forEach(l => l.classList.remove('active'));
-                link.classList.add('active');
-                const filter = link.getAttribute('data-filter') || 'all';
-                filterTemples(filter);
-            });
-        });
-    } else {
-        console.error('No navigation links found');
-    }
-}
-
-// Update footer
-function updateFooter() {
-    try {
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-        document.getElementById('last-modified').textContent = document.lastModified || 'Unknown';
-    } catch (error) {
-        console.error('Error updating footer:', error);
-        document.querySelector('footer').innerHTML += '<p style="color: red;">Error updating footer dates.</p>';
-    }
-}
-
-// Initialize application
-function init() {
-    if (!validateTempleData(temples)) {
-        console.error('Invalid temple data detected');
-        gallery.innerHTML = '<p style="color: red;">Error: Invalid temple data.</p>';
+    const navLinks = document.querySelectorAll('nav a[data-filter]');
+    if (navLinks.length === 0) {
+        console.error('No navigation links with data-filter found');
         return;
     }
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            navLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+            const filter = link.getAttribute('data-filter') || 'all';
+            filterTemples(filter);
+            // Close mobile menu after selection
+            if (navMenu.classList.contains('open')) {
+                navMenu.classList.remove('open');
+                hamburger.textContent = '☰';
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+
+    console.log(`Initialized ${navLinks.length} nav links`);
+}
+
+// footer 
+function updateFooter() {
+    const currentYearEl = document.getElementById('current-year');
+    const lastModifiedEl = document.getElementById('last-modified');
+    const footer = document.querySelector('footer');
+
+    if (!currentYearEl || !lastModifiedEl || !footer) {
+        console.error('Footer elements not found');
+        return;
+    }
+
+    currentYearEl.textContent = new Date().getFullYear();
+    lastModifiedEl.textContent = document.lastModified || new Date().toLocaleDateString();
+
+    console.log('Footer updated:', { year: new Date().getFullYear(), modified: document.lastModified });
+}
+
+// Main
+function initApp() {
+    console.log('Initializing Temple Gallery App');
+
+    if (!validateTempleData(temples)) {
+        console.error('Invalid temple data detected');
+        if (gallery) {
+            gallery.innerHTML = '<p style="color: red; text-align: center;">Error: Invalid temple data. Please check the data source.</p>';
+        }
+        return;
+    }
+
     initHamburger();
     initNavLinks();
     updateFooter();
-    displayTemples(temples);
+
+
+    filterTemples('all');
 }
 
-init();
+document.addEventListener('DOMContentLoaded', initApp);
