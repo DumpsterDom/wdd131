@@ -215,7 +215,7 @@ function initNavLinks() {
             link.classList.add('active');
             const filter = link.getAttribute('data-filter') || 'all';
             filterTemples(filter);
-            // Close mobile menu after selection
+        
             if (navMenu.classList.contains('open')) {
                 navMenu.classList.remove('open');
                 hamburger.textContent = '☰';

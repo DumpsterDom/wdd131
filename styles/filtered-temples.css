@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     line-height: 1.6;
     color: #676666;
     background-color: #f4f4f4;
@@ -88,15 +88,15 @@ figure:hover {
 
 figcaption {
     padding: 1rem;
-    text-align: center; /* Ensure text is centered */
-    color: #333; /* Darker text for readability */
+    text-align: center;
+    color: #333;
 }
 
 figcaption strong {
     display: block;
     margin-bottom: 0.5rem;
-    color: #000; /* Darker temple name */
-    text-align: center; /* Center the temple name specifically */
+    color: #000; 
+    text-align: center; 
 }
 
 img {
