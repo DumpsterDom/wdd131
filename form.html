@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 | Dominic Trujillo-Grissom | Product Review Form</title>
+    <link rel="stylesheet" href="styles/form.css">
+    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals, Dominic Trujillo-Grissom, Review form, Product review.">
+    <meta name="author" content="Dominic Trujillo-Grissom">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Product Review </h1>
+    </header>
+    <main>
+        <form method="get" action="review.html">
+            <!-- Product Name -->
+            <label for="product">Product Name <span class="required">*</span></label>
+            <select id="product" name="product" required>
+                <option value="" disabled selected>Select a Product ...</option>
+            </select>
+
+            <!-- Overall Rating -->
+            <fieldset class="rating">
+                <legend>Overall Rating <span class="required">*</span></legend>
+                <div class="star-rating">
+                    <input type="radio" name="stars" id="star-a" value="5"/>
+                    <label for="star-a"></label>
+
+                    <input type="radio" name="stars" id="star-b" value="4"/>
+                    <label for="star-b"></label>
+                
+                    <input type="radio" name="stars" id="star-c" value="3"/>
+                    <label for="star-c"></label>
+                
+                    <input type="radio" name="stars" id="star-d" value="2"/>
+                    <label for="star-d"></label>
+                
+                    <input type="radio" name="stars" id="star-e" value="1"/>
+                    <label for="star-e"></label>
+                </div>
+            </fieldset>
+
+            <!-- Date of Install -->
+            <label for="install-date">Date of Installation <span class="required">*</span></label>
+            <input type="date" id="install-date" name="install-date" required>
+
+            <!-- Features -->
+            <fieldset class="checkbox-group">
+                <legend>Useful Features</legend>
+                <label><input type="checkbox" id="feature1" name="features" value="durability"> Durability</label>
+                <label><input type="checkbox" id="feature2" name="features" value="ease-of-use"> Ease of Use</label>
+                <label><input type="checkbox" id="feature3" name="features" value="performance"> Performance</label>
+                <label><input type="checkbox" id="feature4" name="features" value="design"> Design</label>
+            </fieldset>
+
+            <!-- Review -->
+            <label for="review">Written Review</label>
+            <textarea id="review" name="review" rows="5"></textarea>
+
+            <!-- User Name -->
+            <label for="username">Your Name</label>
+            <input type="text" id="username" name="username">
+
+            <!-- Submit -->
+            <input type="submit" value="Submit Review">
+        </form>
+    </main>
+    <footer>
+       <p>&copy; <span id="currentyear"></span> 🦖 Dominic Trujillo-Grissom 🦖 North Carolina | <span id="lastModified"></span></p>
+    </footer>
+    <script src="scripts/form.js"></script>
+</body>
+</html>

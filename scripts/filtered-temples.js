@@ -91,7 +91,7 @@ const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
 const gallery = document.querySelector('.gallery');
 
-// Validate 
+// Validate temple data 
 function validateTempleData(temples) {
     return temples.every(temple => 
         temple.templeName && 

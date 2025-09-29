@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Your Review!</title>
+    <link rel="stylesheet" href="styles/form.css">
+    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals, Dominic Trujillo-Grissom, Review form confirm, Product review confirm.">
+    <meta name="author" content="Dominic Trujillo-Grissom">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Thank You for Your Review!</h1>
+    </header>
+    <main>
+        <div class="confirmation">
+            <p>Your review has been submitted successfully.</p>
+            <p>Total Reviews Submitted: <span id="review-count">0</span></p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> 🦖 Dominic Trujillo-Grissom 🦖 North Carolina | <span id="lastModified"></span></p>
+    </footer>
+    <script>
+        let reviewCount = localStorage.getItem('reviewCount') || 0;
+        reviewCount = parseInt(reviewCount) + 1;
+        localStorage.setItem('reviewCount', reviewCount);
+        document.getElementById('review-count').textContent = reviewCount;
+
+        const currentYearElement = document.getElementById("currentyear");
+        const lastModifiedElement = document.getElementById("lastModified");
+        if (currentYearElement) {
+            currentYearElement.textContent = new Date().getFullYear();
+        } else {
+            console.error("Element with id 'currentyear' not found");
+        }
+        if (lastModifiedElement) {
+            lastModifiedElement.textContent = "Last Modified: " + document.lastModified;
+        } else {
+            console.error("Element with id 'lastModified' not found");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    background-color: #03386c; /* Dark blue header */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Main content */
+main {
+    flex: 1 0 auto;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 0;
+}
+
+form {
+    background-color: #dbdfe0; /* Lighter blue for the form background */
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Labels and form elements */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #020202; /* Dark blue for labels to match header */
+}
+
+select, input[type="date"], input[type="text"], textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: white;
+}
+
+textarea {
+    height: 80px;
+    resize: none;
+}
+
+/* Star Rating Styles */
+.star-rating {
+    display: flex;
+    align-items: center;
+    width: 160px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin: 40px auto;
+    position: relative;
+}
+/* hide the inputs */
+.star-rating input {
+    display: none;
+}
+/* set properties of all labels */
+.star-rating > label {
+    width: 30px;
+    height: 30px;
+    font-family: Arial;
+    font-size: 30px;
+    transition: 0.2s ease;
+    color: orange;
+}
+/* give label a hover state */
+.star-rating label:hover {
+    color: #ff69b4;
+    transition: 0.2s ease;
+}
+.star-rating label:active::before {
+    transform: scale(1.1);
+}
+/* set shape of unselected label */
+.star-rating label::before {
+    content: '\2606'; /* Unicode for unfilled star */
+    position: absolute;
+    top: 0px;
+    line-height: 26px;
+}
+/* set full star shape for checked label and those that come after it */
+.star-rating input:checked ~ label:before {
+    content: '\2605';
+}
+@-moz-document url-prefix() {
+    .star-rating input:checked ~ label:before {
+        font-size: 36px;
+        line-height: 21px;
+    }
+}
+
+/* Checkbox group */
+.checkbox-group {
+    margin-bottom: 10px;
+}
+
+.checkbox-group legend {
+    font-size: 14px;
+    color: #020202;
+    margin-bottom: 5px;
+}
+
+.checkbox-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Submit button */
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #E0F0F7;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #1E90FF;
+    cursor: pointer;
+    text-align: center;
+}
+
+input[type="submit"]:hover {
+    background-color: #D0E0EF;
+}
+
+/* Footer */
+footer {
+    background-color: #03386c;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 12px;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: #ffd700;
+    text-decoration: none;
+}
+
+/* Responsive design */
+@media (min-width: 601px) {
+    main {
+        max-width: 600px;
+    }
+}
