@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #F5F5F5;
+  color: #333333;
+}
+
+header {
+  background-color: #DC143C;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+h1, h2 {
+  font-family: 'Roboto', sans-serif;
+  color: #8B0000;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+pre {
+  background-color: #eee;
+  padding: 1rem;
+  border-radius: 5px;
+  font-family: monospace;
+}
+
+footer {
+  border-top: 2px solid #8B0000;
+  padding: 1rem;
+  text-align: center;
+}
