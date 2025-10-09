@@ -1,0 +1,206 @@
+/* CSS Variables for Anime-inspired Color Scheme */
+:root {
+  --primary-color: rgb(174, 91, 73); /* Dark Red */
+  --secondary-color: #1e2035;
+  --background-color: rgb(174, 91, 73); /* Off-White */
+  --dark-theme: #333333; /* Charcoal */
+  --spacing: 1.5rem; /* Increased spacing for better separation */
+  --light-grey: #D3D3D3; /* Light grey background */
+}
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--dark-theme);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6; /* Cleaner text flow */
+}
+
+header {
+  padding: var(--spacing);
+  background-color: #1e2035;
+  min-height: 120px; /* Ensure enough height to lower nav */
+  position: relative; /* Provide context for absolute positioning */
+}
+
+.title-bar {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center; /* Align items vertically */
+  justify-content: center; /* Center the logo horizontally */
+  padding: 0.5rem 0;
+  height: 100%; /* Full height of header */
+}
+
+.logo-box {
+  margin: 0; /* Remove margin to center properly */
+  padding: 0.25rem; /* Reduced padding around logo */
+}
+
+.logo {
+  width: 250px; /* Slightly larger for better visibility */
+  height: auto;
+}
+
+.title-bar nav {
+  position: absolute; /* Position nav independently */
+  right: var(--spacing); /* Align nav to the right */
+  bottom: var(--spacing); /* Lower the nav from the bottom */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: var(--background-color);
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem; /* Cleaner font size */
+}
+
+nav a:hover {
+  color: #1e2035;
+}
+
+nav a.active {
+  font-weight: bold;
+  border-bottom: 2px solid var(--background-color);
+}
+
+.hero, .content, .store {
+  position: relative;
+  margin-bottom: var(--spacing);
+}
+
+.hero img, .content img, .store img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /* Cleaner image fit */
+}
+
+.hero-caption {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  text-align: left;
+  color: white;
+  background-color: #1e2035;
+  padding: 1rem;
+  border-radius: 5px;
+  max-width: 40%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Cleaner shadow */
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem; /* Increased gap for better spacing between cards */
+  padding: var(--spacing); /* Added padding around the gallery */
+}
+
+.gallery-section {
+  margin-bottom: var(--spacing); /* Space between top 5 and bottom 5 */
+}
+
+.series-card {
+  background-color: #d7d5d5; /* Lighter, more fitted background */
+  padding: 1rem; /* Adjusted padding for compactness */
+  border: 2px solid #000;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-height: 500px; /* Set maximum height to prevent stretching */
+  overflow-y: auto; /* Allow scrolling if content exceeds height */
+}
+
+.series-card h3 {
+  font-size: 1.5rem; /* Larger heading size */
+  font-weight: bold; /* Bolder text */
+  margin-bottom: 0.5rem;
+}
+
+.series-card p {
+  font-size: 1.2rem; /* Larger paragraph size */
+  font-weight: 600; /* Bolder text */
+  margin: 0.25rem 0; /* Adjusted spacing */
+}
+
+.series-image {
+  width: 100%; /* Full width of the card */
+  height: 150px; /* Reduced height for better fit */
+  object-fit: contain; /* Use contain to preserve clarity, avoid cropping */
+  margin-bottom: 0.5rem; /* Reduced margin for compactness */
+}
+
+h2 {
+  color: var(--primary-color);
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 0.5rem; /* Cleaner spacing */
+}
+
+footer {
+  text-align: center;
+  padding: var(--spacing);
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+  border-top: 2px solid var(--primary-color);
+  margin-top: var(--spacing); /* Space from the bottom 5 to footer */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem; /* Slightly reduced gap for smaller screens */
+  }
+  .series-image {
+    height: 100px; /* Adjusted height for smaller screens */
+  }
+  .series-card {
+    max-height: 300px; /* Reduced max height for smaller screens */
+  }
+  .series-card h3 {
+    font-size: 1.3rem; /* Slightly smaller heading for mobile */
+  }
+  .series-card p {
+    font-size: 1rem; /* Slightly smaller paragraph for mobile */
+  }
+}
+
+/* Hamburger menu styles */
+#nav-menu {
+  display: none;
+}
+
+#nav-menu.open {
+  display: block;
+}
+
+#hamburger {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--background-color);
+}
+
+@media (min-width: 769px) {
+  #hamburger {
+    display: none;
+  }
+  #nav-menu {
+    display: block;
+  }
+}

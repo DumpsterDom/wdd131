@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senpai & Son - Top Ranked</title>
+    <link rel="stylesheet" href="styles/toprated.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="title-bar">
+            <div class="logo-box">
+                <img src="images/logo.png" alt="anime logo" class="logo">
+            </div>
+        <button id="hamburger" aria-expanded="false" aria-label="Toggle navigation menu">☰</button>
+        <nav id="nav-menu" aria-label="Main navigation">
+            <ul>
+                <li><a href="#" data-filter="all" class="active">All Anime</a></li>
+                <li><a href="#" data-filter="old">Older</a></li>
+                <li><a href="#" data-filter="new">Newer</a></li>
+                <li><a href="#" data-filter="large">Top 3</a></li>
+            </ul>
+        </nav>
+        </section>
+    </header>
+    <main>
+        <section class="gallery" aria-live="polite"></section>
+    </main>
+    <section class="store">
+            <picture>
+                <img src="images/ranking.jpg" alt="Anime ranking photo" loading="lazy" width="800" height="300">
+            </picture>
+        </section>
+    <footer>
+        <p>&copy; <span id="current-year"></span> 🦖 Dominic Trujillo-Grissom 🦖 North Carolina</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
+    </footer>
+    <script src="scripts/toprated.js" defer></script>
+</body>
+</html>
