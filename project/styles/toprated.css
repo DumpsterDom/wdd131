@@ -1,54 +1,54 @@
-/* CSS Variables for Anime-inspired Color Scheme */
 :root {
-  --primary-color: rgb(174, 91, 73); /* Dark Red */
+  --primary-color: rgb(174, 91, 73); 
   --secondary-color: #1e2035;
-  --background-color: rgb(174, 91, 73); /* Off-White */
-  --dark-theme: #333333; /* Charcoal */
-  --spacing: 1.5rem; /* Increased spacing for better separation */
-  --light-grey: #D3D3D3; /* Light grey background */
+  --background-color: rgb(174, 91, 73); 
+  --dark-theme: #333333; 
+  --spacing: 1.5rem; 
+  --light-grey: #D3D3D3; 
 }
 
-/* General Styles */
+/* Body */
 body {
   font-family: Arial, sans-serif;
   background-color: var(--background-color);
   color: var(--dark-theme);
   margin: 0;
   padding: 0;
-  line-height: 1.6; /* Cleaner text flow */
+  line-height: 1.6; 
 }
 
+/* Header  */
 header {
   padding: var(--spacing);
   background-color: #1e2035;
-  min-height: 120px; /* Ensure enough height to lower nav */
-  position: relative; /* Provide context for absolute positioning */
+  min-height: 120px; 
+  position: relative; 
 }
 
 .title-bar {
   max-width: 1300px;
   margin: 0 auto;
   display: flex;
-  align-items: center; /* Align items vertically */
-  justify-content: center; /* Center the logo horizontally */
+  align-items: center; 
+  justify-content: center; 
   padding: 0.5rem 0;
-  height: 100%; /* Full height of header */
+  height: 100%; 
 }
 
 .logo-box {
-  margin: 0; /* Remove margin to center properly */
-  padding: 0.25rem; /* Reduced padding around logo */
+  margin: 0; 
+  padding: 0.25rem;
 }
 
 .logo {
-  width: 250px; /* Slightly larger for better visibility */
+  width: 250px; 
   height: auto;
 }
 
 .title-bar nav {
-  position: absolute; /* Position nav independently */
-  right: var(--spacing); /* Align nav to the right */
-  bottom: var(--spacing); /* Lower the nav from the bottom */
+  position: absolute; 
+  right: var(--spacing); 
+  bottom: var(--spacing); 
 }
 
 nav ul {
@@ -63,7 +63,7 @@ nav a {
   color: var(--background-color);
   text-decoration: none;
   font-family: 'Roboto', sans-serif;
-  font-size: 1.1rem; /* Cleaner font size */
+  font-size: 1.1rem;
 }
 
 nav a:hover {
@@ -75,6 +75,7 @@ nav a.active {
   border-bottom: 2px solid var(--background-color);
 }
 
+/* Hero  */
 .hero, .content, .store {
   position: relative;
   margin-bottom: var(--spacing);
@@ -84,7 +85,7 @@ nav a.active {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover; /* Cleaner image fit */
+  object-fit: cover;
 }
 
 .hero-caption {
@@ -97,23 +98,25 @@ nav a.active {
   padding: 1rem;
   border-radius: 5px;
   max-width: 40%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Cleaner shadow */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* Gallary  */
 .gallery {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 1.5rem; /* Increased gap for better spacing between cards */
-  padding: var(--spacing); /* Added padding around the gallery */
+  gap: 1.5rem;
+  padding: var(--spacing); /
 }
 
 .gallery-section {
-  margin-bottom: var(--spacing); /* Space between top 5 and bottom 5 */
+  margin-bottom: var(--spacing); 
 }
 
+/* Cards  */
 .series-card {
-  background-color: #d7d5d5; /* Lighter, more fitted background */
-  padding: 1rem; /* Adjusted padding for compactness */
+  background-color: #d7d5d5; 
+  padding: 1rem;
   border: 2px solid #000;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -121,65 +124,66 @@ nav a.active {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  max-height: 500px; /* Set maximum height to prevent stretching */
-  overflow-y: auto; /* Allow scrolling if content exceeds height */
+  max-height: 500px; 
+  overflow-y: auto; 
 }
 
 .series-card h3 {
-  font-size: 1.5rem; /* Larger heading size */
-  font-weight: bold; /* Bolder text */
+  font-size: 1.5rem; 
+  font-weight: bold; 
   margin-bottom: 0.5rem;
 }
 
 .series-card p {
-  font-size: 1.2rem; /* Larger paragraph size */
-  font-weight: 600; /* Bolder text */
-  margin: 0.25rem 0; /* Adjusted spacing */
+  font-size: 1.2rem; 
+  font-weight: 600; 
+  margin: 0.25rem 0; 
 }
 
 .series-image {
-  width: 100%; /* Full width of the card */
-  height: 150px; /* Reduced height for better fit */
-  object-fit: contain; /* Use contain to preserve clarity, avoid cropping */
-  margin-bottom: 0.5rem; /* Reduced margin for compactness */
+  width: 100%; 
+  height: 150px; 
+  object-fit: contain; 
+  margin-bottom: 0.5rem; 
 }
 
 h2 {
   color: var(--primary-color);
   font-family: 'Roboto', sans-serif;
-  margin-bottom: 0.5rem; /* Cleaner spacing */
+  margin-bottom: 0.5rem; 
 }
 
+/* Footer  */
 footer {
   text-align: center;
   padding: var(--spacing);
   background-color: var(--secondary-color);
   color: var(--background-color);
   border-top: 2px solid var(--primary-color);
-  margin-top: var(--spacing); /* Space from the bottom 5 to footer */
+  margin-top: var(--spacing); 
 }
 
-/* Responsive Design */
+/* Responsive  */
 @media (max-width: 768px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem; /* Slightly reduced gap for smaller screens */
+    gap: 1rem; 
   }
   .series-image {
-    height: 100px; /* Adjusted height for smaller screens */
+    height: 100px; 
   }
   .series-card {
-    max-height: 300px; /* Reduced max height for smaller screens */
+    max-height: 300px; 
   }
   .series-card h3 {
-    font-size: 1.3rem; /* Slightly smaller heading for mobile */
+    font-size: 1.3rem; 
   }
   .series-card p {
-    font-size: 1rem; /* Slightly smaller paragraph for mobile */
+    font-size: 1rem; 
   }
 }
 
-/* Hamburger menu styles */
+/* Hamburger */
 #nav-menu {
   display: none;
 }

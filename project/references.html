@@ -1,21 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>References - Anime & Manga Hub</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senpai & Son - References</title>
+    <meta name="description" content="refrences for the assets and data used to make Senpai & Son">
+    <meta name="author" content="Dominic Trujillo-Grissom">
+    <link rel="stylesheet" href="styles/references.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>References</h1>
-  <ul>
-    <li>Top Anime data sourced from GamesRadar: <a href="https://www.gamesradar.com/best-anime/">https://www.gamesradar.com/best-anime/</a></li>
-    <li>Top Manga data sourced from CBR: <a href="https://www.cbr.com/best-manga-to-read-in-2025/">https://www.cbr.com/best-manga-to-read-in-2025/</a></li>
-    <li>Images from Unsplash: <a href="https://unsplash.com">https://unsplash.com</a></li>
-  </ul>
-  <p><a href="index.html">Back to Home</a></p>
-</body>
-<footer>
-        <p>&copy; 🦖 Dominic Trujillo-Grissom 🦖 | North Carolina</p>
+    <header>
+        <div class="title-bar">
+            <div class="logo-box">
+                <img src="images/logo.png" alt="anime logo" class="logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="toprated.html">Top Ranked</a></li>
+                    <li><a href="comments.html">Comments</a></li>
+                    <li><a href="references.html" class="active">References</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="references-section">
+            <h2>References</h2>
+            <ul>
+                <li>Top Anime data sourced from GamesRadar: <a href="https://www.gamesradar.com/best-anime/">https://www.gamesradar.com/best-anime/</a></li>
+                <li>Top Manga data sourced from CBR: <a href="https://www.cbr.com/best-manga-to-read-in-2025/">https://www.cbr.com/best-manga-to-read-in-2025/</a></li>
+                <li>Images from Unsplash: <a href="https://unsplash.com">https://unsplash.com</a></li>
+                <li>Images from ChatGPT: <a href="https://chatgpt.com/">https://chatgpt.com/</a></li>
+            </ul>
+        </section>
+    </main>
+    <section class="lounge">
+        <picture>
+            <img src="images/ref.jpg" alt="Anime lounge" loading="lazy" width="1600" height="800">
+        </picture>
+    </section>
+    <footer>
+        <p>&copy; <span id="current-year"></span> 🦖 Dominic Trujillo-Grissom 🦖 North Carolina</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
     </footer>
-    <script src="script.js"></script>
-</html>
+    <script src="scripts/comments.js" defer></script>

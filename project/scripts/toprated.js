@@ -39,7 +39,7 @@ function setupTopSeries() {
     displaySeries(sortedAnime, container);
   }
 }
-
+// Filter
 function filterSeries(filter) {
   let filtered = [...topAnime];
   const currentYear = new Date().getFullYear();
@@ -89,10 +89,18 @@ function updateLastModified() {
   }
 }
 
+function updateCurrentYear() {
+  const currentYear = document.getElementById('current-year');
+  if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   loadTheme();
   setupTopSeries();
-  updateLastModified(); // Add last modified date on load
+  updateLastModified();
+  updateCurrentYear();
 
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('nav-menu');
