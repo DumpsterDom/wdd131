@@ -13,7 +13,7 @@
     <header>
         <div class="title-bar">
             <div class="logo-box">
-                <img src="images/logo.png" alt="anime logo" class="logo">
+                <img src="images/logo.jpg" alt="anime logo" class="logo">
             </div>
             <nav>
                 <ul>
@@ -28,7 +28,9 @@
     <main>
         <section class="hero">
             <picture>
-                <img src="images/anime.jpg" alt="Anime photo" loading="lazy" width="800" height="800">
+                <source media="(max-width: 600px)" srcset="images/anime.jpg">
+                <source media="(max-width: 1200px)" srcset="images/anime.jpg">
+                <img src="images/anime.jpg" alt="Anime photo" loading="lazy" width="412" height="275">
             </picture>
             <div class="hero-caption">
                 <h2>Senpai & Son</h2>
@@ -37,14 +39,14 @@
         </section>
         <section class="content">
             <div class="son-thanks-container">
-                <picture><img src="images/son.png" alt="Buba anime photo" loading="lazy" width="500" height="200"></picture>
+                <picture><img src="images/son.jpg" alt="Buba anime photo" loading="lazy" width="500" height="200"></picture>
                 <div class="thanks">
                     <h2>Thank you!</h2>
                     <p>We appreciate you stopping by. We are excited to show off our favorite anime!.</p>
                 </div>
             </div>
             <div class="dad-about-container">
-                <picture><img src="images/dad.png" alt="Dad anime photo" loading="lazy" width="500" height="200"></picture>
+                <picture><img src="images/dad.jpg" alt="Dad anime photo" loading="lazy" width="500" height="200"></picture>
                 <div class="about">
                     <h2>About Us</h2>
                     <p>At Senpai & Son, our mission is to create an inclusive community for anime enthusiasts to explore, share, and celebrate their passion.</p>

@@ -63,14 +63,13 @@ nav ul {
 }
 
 nav a {
-  color: var(--background-color);
-  text-decoration: none;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.1rem; 
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
 }
-
 nav a:hover {
-  color: #1e2035;
+    color: var(--background-color);
 }
 
 /* Hero */
@@ -156,16 +155,16 @@ nav a:hover {
 }
 
 h2 {
-  color: var(--primary-color);
+  color: #FFFFFF;
   font-family: 'Roboto', sans-serif;
   margin-bottom: 0.5rem; 
 }
 
 /* Footer */
 footer {
-  text-align: center;
-  padding: var(--spacing);
-  background-color: var(--secondary-color);
-  color: var(--background-color);
-  border-top: 2px solid var(--primary-color);
+    text-align: center;
+    padding: var(--spacing);
+    background-color: var(--secondary-color);
+    color: #FFFFFF; 
+    border-top: 2px solid var(--primary-color);
 }

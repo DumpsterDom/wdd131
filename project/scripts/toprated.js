@@ -1,6 +1,6 @@
 const topAnime = [
   { title: 'Black Clover', desc: 'Swords and Magic', rank: 7, genre: 'Action', year: '2017', image: 'images/blackclover.png' },
-  { title: 'Bluelock', desc: 'Stunning visuals and soccer', rank: 10, genre: 'Sports', year: '2022', image: 'images/bluelock.png' },
+  { title: 'Bluelock', desc: 'Stunning visuals and soccer', rank: 10, genre: 'Sports', year: '2022', image: 'images/bluelock.jpg' },
   { title: 'Dan Da Dan', desc: 'Ghost and Aliens', rank: 4, genre: 'Action', year: '2024', image: 'images/dandadan.png' },
   { title: 'Dragon Ball Super', desc: 'Galatic sized battles', rank: 3, genre: 'Fantasy', year: '2015', image: 'images/dbz.png' },
   { title: 'Dr. Stone', desc: 'Scientific adventures', rank: 9, genre: 'Fantasy', year: '2019', image: 'images/drstone.png' },
