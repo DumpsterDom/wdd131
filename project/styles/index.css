@@ -114,11 +114,12 @@ nav a:hover {
   background-color: var(--light-grey);
   padding: var(--spacing);
   display: flex;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
   gap: var(--spacing);
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem; 
 }
 
 .son-thanks-container picture img,

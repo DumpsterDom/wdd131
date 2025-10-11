@@ -4,36 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Senpai & Son - Top Ranked</title>
-    <meta name="description" content="Top rated anime buy Senpaai & Son">
+    <meta name="description" content="Top rated anime by Senpai & Son">
     <meta name="author" content="Dominic Trujillo-Grissom">
-    <link rel="stylesheet" href="styles/toprated.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="styles/toprated.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles/toprated.css"></noscript>
+    <link rel="preload" href="https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body>
     <header>
-        <div class="title-bar">
+        <div class="sort-bar">
+            <button id="hamburger" aria-expanded="false" aria-label="Toggle navigation menu">☰</button>
+            <nav id="nav-menu" aria-label="Array Filter">
+                <ul>
+                    <li><a href="#" data-filter="all" class="active">All Anime</a></li>
+                    <li><a href="#" data-filter="old">Older</a></li>
+                    <li><a href="#" data-filter="new">Newer</a></li>
+                    <li><a href="#" data-filter="large">Top 3</a></li>
+                </ul>
+            </nav>
             <div class="logo-box">
-                <img src="images/logo.jpg" alt="anime logo" class="logo">
+                <img src="images/logo.jpg" alt="anime logo" class="logo" fetchpriority="high" width="250" height="100" loading="eager">
             </div>
-        <button id="hamburger" aria-expanded="false" aria-label="Toggle navigation menu">☰</button>
-        <nav id="nav-menu" aria-label="Main navigation">
-            <ul>
-                <li><a href="#" data-filter="all" class="active">All Anime</a></li>
-                <li><a href="#" data-filter="old">Older</a></li>
-                <li><a href="#" data-filter="new">Newer</a></li>
-                <li><a href="#" data-filter="large">Top 3</a></li>
-            </ul>
-        </nav>
-        </section>
+        </div>
+        <div class="title-bar">
+            <nav id="nav-menu" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="toprated.html">Top Ranked</a></li>
+                    <li><a href="comments.html">Comments</a></li>
+                    <li><a href="references.html">References</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
         <section class="gallery" aria-live="polite"></section>
     </main>
     <section class="store">
-            <picture>
-                <img src="images/ranking.jpg" alt="Anime ranking photo" loading="lazy" width="800" height="300">
-            </picture>
-        </section>
+        <picture>
+            <img src="images/ranking.jpg" alt="Anime ranking photo" loading="lazy" width="800" height="300">
+        </picture>
+    </section>
     <footer>
         <p>&copy; <span id="current-year"></span> 🦖 Dominic Trujillo-Grissom 🦖 North Carolina</p>
         <p>Last Modified: <span id="last-modified"></span></p>

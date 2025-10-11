@@ -1,14 +1,14 @@
 const topAnime = [
-  { title: 'Black Clover', desc: 'Swords and Magic', rank: 7, genre: 'Action', year: '2017', image: 'images/blackclover.png' },
+  { title: 'Black Clover', desc: 'Swords and Magic', rank: 7, genre: 'Action', year: '2017', image: 'images/blackclover.jpg' },
   { title: 'Bluelock', desc: 'Stunning visuals and soccer', rank: 10, genre: 'Sports', year: '2022', image: 'images/bluelock.jpg' },
-  { title: 'Dan Da Dan', desc: 'Ghost and Aliens', rank: 4, genre: 'Action', year: '2024', image: 'images/dandadan.png' },
-  { title: 'Dragon Ball Super', desc: 'Galatic sized battles', rank: 3, genre: 'Fantasy', year: '2015', image: 'images/dbz.png' },
-  { title: 'Dr. Stone', desc: 'Scientific adventures', rank: 9, genre: 'Fantasy', year: '2019', image: 'images/drstone.png' },
-  { title: 'Gundam', desc: 'Giant robots', rank: 8, genre: 'Action', year: '1979', image: 'images/gundam.png' },
-  { title: 'My Hero Academia', desc: 'Young heroes learn their powers', rank: 5, genre: 'Action', year: '2018', image: 'images/mha.png' },
-  { title: 'Naruto', desc: 'Ninjas fighting for survival', rank: 2, genre: 'Action', year: '2002', image: 'images/naruto.png' },
-  { title: 'One Piece', desc: 'Pirates on a grand adventure', rank: 1, genre: 'Action', year: '1999', image: 'images/onepiece.png' },
-  { title: 'Pokemon', desc: 'Catch them all', rank: 6, genre: 'Adventure', year: '1997', image: 'images/pokemon.png' },
+  { title: 'Dan Da Dan', desc: 'Ghost and Aliens', rank: 4, genre: 'Action', year: '2024', image: 'images/dandadan.jpg' },
+  { title: 'Dragon Ball Super', desc: 'Galatic sized battles', rank: 3, genre: 'Fantasy', year: '2015', image: 'images/dbz.jpg' },
+  { title: 'Dr. Stone', desc: 'Scientific adventures', rank: 9, genre: 'Fantasy', year: '2019', image: 'images/drstone.jpg' },
+  { title: 'Gundam', desc: 'Giant robots', rank: 8, genre: 'Action', year: '1979', image: 'images/gundam.jpg' },
+  { title: 'My Hero Academia', desc: 'Young heroes learn their powers', rank: 5, genre: 'Action', year: '2018', image: 'images/mha.jpg' },
+  { title: 'Naruto', desc: 'Ninjas fighting for survival', rank: 2, genre: 'Action', year: '2002', image: 'images/naruto.jpg' },
+  { title: 'One Piece', desc: 'Pirates on a grand adventure', rank: 1, genre: 'Action', year: '1999', image: 'images/onepiece.jpg' },
+  { title: 'Pokemon', desc: 'Catch them all', rank: 6, genre: 'Adventure', year: '1997', image: 'images/pokemon.jpg' },
 ];
 
 function displaySeries(series, container) {
@@ -39,7 +39,7 @@ function setupTopSeries() {
     displaySeries(sortedAnime, container);
   }
 }
-// Filter
+
 function filterSeries(filter) {
   let filtered = [...topAnime];
   const currentYear = new Date().getFullYear();
@@ -103,11 +103,13 @@ document.addEventListener('DOMContentLoaded', () => {
   updateCurrentYear();
 
   const hamburger = document.getElementById('hamburger');
-  const navMenu = document.getElementById('nav-menu');
+  const navMenus = document.querySelectorAll('#nav-menu');
 
   hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('open');
-    hamburger.textContent = navMenu.classList.contains('open') ? '✖' : '☰';
+    navMenus.forEach(navMenu => {
+      navMenu.classList.toggle('open');
+    });
+    hamburger.textContent = navMenus[0].classList.contains('open') ? '✖' : '☰';
   });
 
   const filterLinks = document.querySelectorAll('[data-filter]');

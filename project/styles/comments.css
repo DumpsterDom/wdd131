@@ -62,7 +62,7 @@ nav ul {
 }
 
 nav a {
-  color: var(--background-color);
+  color: #ffff;
   text-decoration: none;
   font-family: 'Roboto', sans-serif;
   font-size: 1.1rem;
@@ -104,7 +104,7 @@ nav a.active {
 }
 
 .comments-section h2 {
-  color: var(--primary-color);
+  color: #020202;
   font-family: 'Roboto', sans-serif;
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
@@ -115,7 +115,7 @@ nav a.active {
 }
 
 .comment-form h3 {
-  color: var(--primary-color);
+  color: #020202;
   font-family: 'Roboto', sans-serif;
   font-size: 1.4rem;
   margin-bottom: 0.5rem;
@@ -131,7 +131,7 @@ nav a.active {
 
 .comment-form label {
   font-weight: bold;
-  color: var(--dark-theme);
+  color: #020202;
   display: block;
   text-align: center;
 }
@@ -153,7 +153,7 @@ nav a.active {
 
 .comment-form input[type="submit"] {
   background-color: var(--secondary-color);
-  color: var(--background-color);
+  color: #ffff;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
@@ -167,7 +167,7 @@ nav a.active {
 
 .comment-form input[type="submit"]:hover {
   background-color: var(--primary-color);
-  color: white;
+  color: var(--primary-color);
 }
 
 .comments-list {
@@ -188,7 +188,7 @@ nav a.active {
 }
 
 .review h3 {
-  color: var(--primary-color);
+  color: #020202;
   font-family: 'Roboto', sans-serif;
   font-size: 1.4rem;
   margin-bottom: 0.5rem;
@@ -227,7 +227,7 @@ nav a.active {
 
 .review input[type="submit"] {
   background-color: var(--secondary-color);
-  color: var(--background-color);
+  color: #ffff;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
@@ -241,7 +241,7 @@ nav a.active {
 
 .review input[type="submit"]:hover {
   background-color: var(--primary-color);
-  color: white;
+  color: var(--primary-color);
 }
 
 .review fieldset {
@@ -252,7 +252,7 @@ nav a.active {
 
 .review fieldset legend {
   font-weight: bold;
-  color: var(--primary-color);
+  color: #020202;
   font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
@@ -272,7 +272,7 @@ nav a.active {
 
 .review .star-rating label {
   font-size: 1.5rem;
-  color: var(--light-grey);
+  color: #020202;
   cursor: pointer;
 }
 
@@ -291,7 +291,7 @@ nav a.active {
 
 .review .checkbox-group label {
   font-weight: normal;
-  color: var(--dark-theme);
+  color: #020202;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -306,7 +306,7 @@ footer {
   text-align: center;
   padding: var(--spacing);
   background-color: var(--secondary-color);
-  color: var(--background-color);
+  color: #ffff;
   border-top: 2px solid var(--primary-color);
   margin-top: 0;
 }

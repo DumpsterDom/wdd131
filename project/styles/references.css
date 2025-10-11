@@ -63,7 +63,7 @@ nav ul {
 }
 
 nav a {
-  color: var(--background-color);
+  color: #ffff;
   text-decoration: none;
   font-family: 'Roboto', sans-serif;
   font-size: 1.1rem;
@@ -104,7 +104,7 @@ nav a.active {
 }
 
 .references-section h2 {
-  color: var(--primary-color);
+  color: #0a0a0a;
   font-family: 'Roboto', sans-serif;
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
@@ -125,7 +125,7 @@ nav a.active {
 }
 
 .references-section a {
-  color: var(--primary-color);
+  color: #060606;
   text-decoration: none;
 }
 
@@ -134,7 +134,7 @@ nav a.active {
 }
 
 .references-section p a {
-  color: var(--primary-color);
+  color: #ffff;
   font-weight: bold;
   text-decoration: none;
 }
@@ -148,7 +148,7 @@ footer {
   text-align: center;
   padding: var(--spacing);
   background-color: var(--secondary-color);
-  color: var(--background-color);
+  color: #ffff;
   border-top: 2px solid var(--primary-color);
   margin-top: 0;
 }
