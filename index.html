@@ -3,52 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 131 - Dynamic Web Fundamentals - Dominic Trujillo-Grissom</title>
-    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals, Dominic Trujillo-Grissom, web development, portfolio">
-    <meta name="author" content="Dominic">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400&display=swap">
-    <script src="scripts/getdates.js" defer></script>
+    <title>Senpai & Son - Anime & Manga Hub</title>
+    <meta name="description" content="homepage for anime ranking site Senpai & Son. Best place to find anime recommendations">
+    <meta name="author" content="Dominic Trujillo-Grissom">
+    <link rel="stylesheet" href="styles/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <header>
-        <span id="course-title">WDD 131 - Dynamic Web Fundamentals</span>
-        <nav>
-            <ul>
-                <li><a href="https://www.linkedin.com/in/dominic-trujillo-grissom-b66b05188/">LinkedIn</a></li>
-                <li><a href="https://byupw.instructure.com/">Canvas</a></li>
-                <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/34?lang=eng">Favorite Scripture</a></li>
-                <li><a href="./final-project">Final Project</a></li>
-            </ul>
-        </nav>
+        <div class="title-bar">
+            <div class="logo-box">
+                <img src="images/logo.jpg" alt="anime logo" class="logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="toprated.html">Top Ranked</a></li>
+                    <li><a href="comments.html">Comments</a></li>
+                    <li><a href="references.html">References</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
-        <h1>Dominic Trujillo-Grissom</h1>
-        <section class="card">
-            <h2>About Me</h2>
-            <div class="me"></div>
-            <img class="profile" src="images/profile.jpg" alt="Dominic Trujillo-Grissom Profile" width="200" height="100">
-            <p>Hi, I'm Dominic Trujillo-Grissom! I am from Albuquerque NM, but currently live in Charlotte NC. I am a proud father of 6 amazing kids and husband to my beautiful wife. I enjoy learning and becoming better with technology. I am super excited to be part of this web development journey and cannot wait for all we will learn!</p>
+        <section class="hero">
+            <picture>
+                <source media="(max-width: 600px)" srcset="images/anime.jpg">
+                <source media="(max-width: 1200px)" srcset="images/anime.jpg">
+                <img src="images/anime.jpg" alt="Anime photo" loading="lazy" width="412" height="275">
+            </picture>
+            <div class="hero-caption">
+                <h2>Senpai & Son</h2>
+                <p>Anime review and community hang out</p>
+            </div>
         </section>
-        <section class="card">
-            <h2>Web Dev Tools</h2>
-            <img src="images/webdev.jpg" alt="Web Dev Tools" width="200" height="100">
-            <p>Here are some great resources to help on your web development journey!</p>
-            <ul>
-                <li><a href="https://realpython.com/">Real Python</a></li>
-                <li><a href="https://www.siegemedia.com/contrast-ratio#darkslategrey-on-gainsboro/">Siege Media</a></li>
-                <li><a href="my.moqups.com/">Moqups</a></li>
-                <li><a href="https://fonts.google.com//">Google Fonts</a></li>
-                <li><a href="https://byui-cse.github.io/cse-ww-program/resources/frontend-resources.html/">Frontend Resources</a></li>
-            </ul>
+        <section class="content">
+            <div class="son-thanks-container">
+                <picture><img src="images/son.jpg" alt="Buba anime photo" loading="lazy" width="500" height="200"></picture>
+                <div class="thanks">
+                    <h2>Thank you!</h2>
+                    <p>We appreciate you stopping by. We are excited to show off our favorite anime! Thanks for sharing your time and enthusiasm with us. We hope you enjoyed it as much as we do!.</p>
+                </div>
+            </div>
+            <div class="dad-about-container">
+                <picture><img src="images/dad.jpg" alt="Dad anime photo" loading="lazy" width="500" height="200"></picture>
+                <div class="about">
+                    <h2>About Us</h2>
+                    <p>At Senpai & Son, our mission is to create an inclusive community for anime enthusiasts to explore, share, and celebrate their passion. We believe anime brings people together across generations, cultures, and experiences. Whether you're a long-time fan or just starting your journey, Senpai & Son is a place where everyone is welcome to connect, discover new favorites, and express their love for the art of anime.</p>
+                </div>
+            </div>
+        </section>
+        <section class="store">
+            <picture>
+                <img src="images/shop.jpg" alt="Anime photo" loading="lazy" width="800" height="850">
+            </picture>
         </section>
     </main>
     <footer>
-        <p>&copy; <span id="currentyear"></span> 🦖 Dominic Trujillo-Grissom 🦖 North Carolina</p>
-        <p id="lastModified"></p>
+        <p>&copy; <span id="current-year"></span> 🦖 Dominic Trujillo-Grissom 🦖 North Carolina</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
     </footer>
+    <script src="scripts/index.js" defer></script>
 </body>
 </html>

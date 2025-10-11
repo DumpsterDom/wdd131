@@ -1,0 +1,171 @@
+:root {
+  --primary-color: rgb(174, 91, 73); 
+  --secondary-color: #1e2035;
+  --background-color: rgb(174, 91, 73); 
+  --dark-theme: #333333; 
+  --spacing: 1rem; 
+  --light-grey: #D3D3D3; 
+}
+
+/* Body */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--dark-theme);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6; 
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  padding: var(--spacing);
+  background-color: #1e2035;
+  min-height: 120px; 
+  position: relative; 
+}
+
+.title-bar {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  padding: 0.5rem 0;
+  height: 100%; 
+}
+
+.logo-box {
+  margin: 0; 
+  padding: 0.25rem;
+}
+
+.logo {
+  width: 250px; 
+  height: auto;
+}
+
+.title-bar nav {
+  position: absolute; 
+  right: var(--spacing); 
+  bottom: var(--spacing); 
+}
+
+nav ul {
+  list-style: none;
+  display: flex; 
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+}
+nav a:hover {
+    color: var(--background-color);
+}
+
+/* Hero */
+.hero, .content, .store {
+  position: relative;
+  margin-bottom: var(--spacing);
+}
+
+.hero img, .content img, .store img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; 
+}
+
+.hero-caption {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  text-align: left;
+  color: white;
+  background-color: #1e2035;
+  padding: 1rem;
+  border-radius: 5px;
+  max-width: 40%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+.content {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 var(--spacing);
+  display: grid;
+  grid-template-columns: 1fr; 
+  gap: var(--spacing);
+  align-items: start;
+}
+
+/* Son & Dad */
+.son-thanks-container,
+.dad-about-container {
+  background-color: var(--light-grey);
+  padding: var(--spacing);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem; 
+}
+
+.son-thanks-container picture img,
+.dad-about-container picture img {
+  max-width: 40%; 
+  height: auto;
+}
+
+.son-thanks-container .thanks,
+.dad-about-container .about {
+  max-width: 50%; 
+  padding: 2rem; 
+  min-height: 200px; 
+  box-sizing: border-box;
+  background-color: #1e2035;
+  color: white;
+  text-align: left; 
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  font-size: 1.2rem; 
+}
+
+.son-thanks-container .thanks h2,
+.dad-about-container .about h2 {
+  font-size: 1.5rem; 
+}
+
+.son-thanks-container .thanks p,
+.dad-about-container .about p {
+  font-size: 1.2rem; 
+}
+
+h2 {
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 0.5rem; 
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: var(--spacing);
+    background-color: var(--secondary-color);
+    color: #FFFFFF; 
+    border-top: 2px solid var(--primary-color);
+}
